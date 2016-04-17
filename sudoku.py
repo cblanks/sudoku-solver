@@ -240,7 +240,7 @@ class sudokuZone():
                 if not test: continue
                 
                 # new pair found
-                for i in xrange(len(two_squares)):
+                for i in range(len(two_squares)):
                     pairs[two_squares[i].location()] = square_values[i]
             
         return pairs
@@ -317,7 +317,7 @@ class sudokuZone():
                 if not test: continue
 
                 # new triple found
-                for i in xrange(len(three_squares)):
+                for i in range(len(three_squares)):
                     triples[three_squares[i].location()] = square_values[i]
             
         return triples
@@ -406,7 +406,7 @@ class sudokuZone():
                 if not test: continue
                 
                 # new quadruple found
-                for i in xrange(len(four_squares)):
+                for i in range(len(four_squares)):
                     quadruples[four_squares[i].location()] = square_values[i]
             
         return quadruples
@@ -433,14 +433,14 @@ class sudokuBoard():
         Create list of the zones on the board. 
         """
         self.zones = []
-        for i in xrange(self.size[0]):
+        for i in range(self.size[0]):
             self.zones.append(sudokuZone(xmin=i, xmax=i, ymin=0, ymax=self.size[1]))
 
-        for j in xrange(self.size[1]):
+        for j in range(self.size[1]):
             self.zones.append(sudokuZone(xmin=0, xmax=self.size[0], ymin=j, ymax=j))
             
-        for i in xrange(0, self.size[0], 3):
-            for j in xrange(0, self.size[1], 3):
+        for i in range(0, self.size[0], 3):
+            for j in range(0, self.size[1], 3):
                 self.zones.append(sudokuZone(xmin=i, xmax=i+2, ymin=j, ymax=j+2))
      
     def __defineSquares__(self, given_squares):
@@ -448,8 +448,8 @@ class sudokuBoard():
         Create list of squares on the board with location and list of possible values.
         """
         self.squares = []
-        for i in xrange(self.size[0]):
-            for j in xrange(self.size[1]):
+        for i in range(self.size[0]):
+            for j in range(self.size[1]):
                 init_values = sudoku_values
                 for k in given_squares.keys():
                     if (i, j)==k:
@@ -616,9 +616,9 @@ class sudokuBoard():
                 break
             
     def draw(self):
-        for j in xrange(self.size[1]):
+        for j in range(self.size[1]):
             print '',
-            for i in xrange(self.size[0]):
+            for i in range(self.size[0]):
                 value = '-'
                 for square in self.squares:
                     if square.location()==(i, j):
