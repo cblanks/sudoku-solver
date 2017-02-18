@@ -1,12 +1,16 @@
 #  d o c s t r i n g s
 """
+A sudoku solver.
 """
+
 
 #  d e p e n d e n c i e s
 from itertools import combinations
 
+
 #  v a r i a b l e s
 sudoku_values = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 
 #  f u n c t i o n s
 def listContains(l, x):
@@ -788,8 +792,8 @@ if __name__ == "__main__":
                   (8, 5) : [9]}
     
     #b = sudokuBoard(easy)
-    #b = sudokuBoard(medium)
-    b = sudokuBoard(hard)
+    b = sudokuBoard(medium)
+    #b = sudokuBoard(hard)
     #b = sudokuBoard(very_hard)
     #b = sudokuBoard(very_very_hard)
     #b = sudokuBoard(seven_star)
